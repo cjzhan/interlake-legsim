@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
-  create_table "actions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "actions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
     t.string "request_type"
     t.datetime "created_at", precision: nil
@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.index ["request_type"], name: "index_actions_on_request_type"
   end
 
-  create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "active_storage_blobs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -41,13 +41,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "active_storage_variant_records", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "active_storage_variant_records", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "amendments", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "amendments", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "referral_id"
     t.text "text"
     t.datetime "created_at", precision: nil
@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.integer "number"
   end
 
-  create_table "authorization_codes", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "authorization_codes", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "chamber_id"
     t.string "chamber_role_type"
     t.string "code"
@@ -65,7 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "ballots", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "ballots", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "preference"
     t.integer "vote_id"
     t.integer "chamber_role_id"
@@ -74,7 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.index ["chamber_role_id", "vote_id"], name: "chamber_role_id_and_vote_it", unique: true
   end
 
-  create_table "calendar_referrals", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "calendar_referrals", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "calendar_id"
     t.integer "referral_id"
     t.integer "position"
@@ -82,7 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "calendars", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "calendars", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "group_id"
@@ -90,7 +90,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "chamber_roles", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "chamber_roles", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "chamber_id"
     t.integer "user_id"
     t.string "type"
@@ -104,7 +104,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "photo_updated_at", precision: nil
   end
 
-  create_table "chamber_settings", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "chamber_settings", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "chamber_id"
     t.string "name"
     t.string "value"
@@ -112,7 +112,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "chambers", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "chambers", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.integer "course_id"
     t.datetime "created_at", precision: nil
@@ -120,7 +120,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.string "scenerio", default: "us_house_of_representatives"
   end
 
-  create_table "comments", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "comments", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "discussion_id"
     t.integer "chamber_role_id"
     t.text "content"
@@ -128,7 +128,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "constituencies", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "constituencies", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "abbr"
     t.string "map_url"
@@ -138,7 +138,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "contents", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "contents", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "reference"
     t.text "copy"
     t.integer "chamber_id"
@@ -147,28 +147,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.boolean "altered", default: false
   end
 
-  create_table "cosponsorships", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "cosponsorships", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "legislation_id"
     t.integer "chamber_role_id"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "courses", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "courses", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.integer "institution_id"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
-    t.datetime "start_at", precision: nil
-    t.datetime "finish_at", precision: nil
-    t.datetime "archive_at", precision: nil
+    t.timestamp "start_at"
+    t.timestamp "finish_at"
+    t.timestamp "archive_at"
     t.string "status"
     t.string "email"
     t.string "time_zone"
     t.string "payment_option", default: "prepaid"
   end
 
-  create_table "discussions", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "discussions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "group_id"
     t.string "name"
     t.boolean "open"
@@ -182,12 +182,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.integer "comments_count"
   end
 
-  create_table "examples", id: :integer, charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "examples", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
   end
 
-  create_table "executive_profiles", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "executive_profiles", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "executive_id"
     t.text "personal_statement"
     t.text "priorities"
@@ -195,14 +195,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "filibusters", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "filibusters", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "motion_id"
     t.integer "chamber_role_id"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "group_leaders", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "group_leaders", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "chamber_role_id"
     t.integer "group_id"
     t.string "title"
@@ -211,7 +211,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "group_membership_requests", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "group_membership_requests", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "group_id"
     t.integer "chamber_role_id"
     t.integer "rank"
@@ -219,14 +219,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "group_memberships", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "group_memberships", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "group_id"
     t.integer "chamber_role_id"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "group_settings", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "group_settings", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "group_id"
     t.string "name"
     t.string "value"
@@ -234,7 +234,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "groups", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "groups", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "abbr"
     t.string "type"
@@ -247,20 +247,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.text "public_announcement"
   end
 
-  create_table "holds", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "holds", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "referral_id"
     t.integer "chamber_role_id"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "institutions", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "institutions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "instructions", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "instructions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.string "summary"
@@ -270,7 +270,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "leadership_nominations", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "leadership_nominations", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "chamber_id"
     t.integer "chamber_role_id"
     t.integer "endorsements"
@@ -278,7 +278,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "legislation", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "legislation", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.integer "number"
     t.integer "legislative_type_id"
@@ -289,7 +289,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.string "sponsor_id"
   end
 
-  create_table "legislation_relationships", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "legislation_relationships", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "actor_id"
     t.integer "target_id"
     t.string "relation"
@@ -297,14 +297,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "legislative_texts", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "legislative_texts", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "primary_text"
     t.text "secondary_text"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "legislative_types", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "legislative_types", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "abbr"
     t.integer "chamber_id"
@@ -313,21 +313,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.string "description"
   end
 
-  create_table "letter_group_recipients", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "letter_group_recipients", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "letter_id"
     t.integer "group_id"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "letter_meta_group_recipients", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "letter_meta_group_recipients", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "letter_id"
     t.string "name"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "letter_user_recipients", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "letter_user_recipients", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "letter_id"
     t.integer "chamber_role_id"
     t.integer "letter_group_recipient_id"
@@ -337,7 +337,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.boolean "blind", default: false
   end
 
-  create_table "letters", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "letters", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "subject"
     t.text "message"
     t.integer "chamber_role_id"
@@ -347,7 +347,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.integer "chamber_id"
   end
 
-  create_table "member_profiles", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "member_profiles", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "member_id"
     t.text "personal_statement"
     t.integer "constituency_id"
@@ -356,7 +356,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "motions", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "motions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "action"
     t.text "text"
     t.integer "referral_id"
@@ -366,7 +366,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.boolean "limited_debate", default: false
   end
 
-  create_table "payments", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
+  create_table "payments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
     t.string "payment_type"
     t.integer "amount"
@@ -381,14 +381,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.text "details"
   end
 
-  create_table "profiles", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "profiles", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "chamber_role_id"
     t.text "statement"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "referrals", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "referrals", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "legislation_id"
     t.integer "group_id"
     t.integer "referrer_id"
@@ -400,7 +400,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.string "priority"
   end
 
-  create_table "reports", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "reports", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "referral_id"
     t.integer "reported_text_id"
     t.datetime "created_at", precision: nil
@@ -408,7 +408,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.string "status", default: "published"
   end
 
-  create_table "survey_answers", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "survey_answers", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "chamber_role_id"
     t.integer "survey_question_id"
     t.integer "answer"
@@ -416,14 +416,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "survey_questions", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "survey_questions", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "chamber_id"
     t.text "question"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "system_users", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "system_users", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "legacy_login", limit: 40
     t.string "first_name", limit: 100, default: ""
     t.string "last_name", limit: 100, default: ""
@@ -451,7 +451,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.index ["reset_password_token"], name: "index_system_users_on_reset_password_token", unique: true
   end
 
-  create_table "tutorials", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "tutorials", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.string "summary"
@@ -461,7 +461,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "updated_at", precision: nil
   end
 
-  create_table "users", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "users", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "legacy_login", limit: 40
     t.string "first_name", limit: 100, default: ""
     t.string "last_name", limit: 100, default: ""
@@ -496,10 +496,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_011933) do
     t.datetime "confirmation_sent_at", precision: nil
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email", "course_id"], name: "index_users_on_email_and_course_id", unique: true
+    t.index ["legacy_login", "course_id"], name: "index_users_on_legacy_login_and_course_id", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "votes", id: :integer, charset: "latin1", collation: "latin1_swedish_ci", force: :cascade do |t|
+  create_table "votes", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "outcome"
     t.string "status"
     t.datetime "start_at", precision: nil

@@ -18,6 +18,8 @@
 
   <h2>Motion by <%= link_to_user( @motion.chamber_role ) %> - <%= @motion.action.titleize %></h2>
 
+  <pre style ="white-space: pre-wrap; word-break: keep-all;">
   <%= sanitize @motion.text, attributes: ['style'] %>
+  </pre>
   </div>
 </div>

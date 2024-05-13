@@ -10,7 +10,9 @@
         <b>From</b> <%= link_to_user @discussion.most_recent_comment.chamber_role %><br />
         <b>On</b> <%= @discussion.most_recent_comment.created_at.strftime("%m/%d/%Y %H:%M %p") %>
 
+        <pre style ="white-space: pre-wrap; word-break: keep-all;">
         <p><%= sanitize @discussion.most_recent_comment.content, attributes: ['style'] %></p>
+        </pre>
         <br style="clear: right; line-height: 0px;" />
       </div>
     <% else %>
@@ -57,7 +59,9 @@
           <b>From</b> <%= link_to_user comment.chamber_role %><br />
           <b>On</b> <%= comment.created_at.strftime("%m/%d/%Y %H:%M %p") %>
 
+          <pre style ="white-space: pre-wrap; word-break: keep-all;">
           <p><%= sanitize comment.content, attributes: ['style'] %></p>
+          </pre>
           <br style="clear: right; line-height: 0px;" />
 
         </div>

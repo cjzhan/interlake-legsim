@@ -45,13 +45,17 @@
     <% end %>
         <div id="legislative-text">
           <div class="the-content">
+          <pre style ="white-space: pre-wrap; word-break: keep-all;">
             <%= sanitize @referral.report.reported_text.primary_text, attributes: ['style'] %>
+          </pre>
           </div>
         </div>
 
         <div id="summary-report">
           <div class="the-content">
+          <pre style ="white-space: pre-wrap; word-break: keep-all;">
             <%= sanitize @referral.report.reported_text.secondary_text, attributes: ['style'] %>
+          </pre>
           </div>
         </div>
 
@@ -94,7 +98,9 @@
                   <b>From</b> <%= link_to_user comment.chamber_role %><br />
                   <b>On</b> <%= comment.created_at.strftime("%m/%d/%Y %H:%M %p") %>
 
+                  <pre style ="white-space: pre-wrap; word-break: keep-all;">
                   <p><%= sanitize comment.content, attributes: ['style'] %></p>
+                  </pre>
 
                 <% end %>
 

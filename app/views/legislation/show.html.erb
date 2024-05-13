@@ -51,13 +51,17 @@
 
     <div id="leg-text">
       <div class="the-content">
+      <pre style ="white-space: pre-wrap; word-break: keep-all;">
         <%= sanitize @legislation.submission_text.primary_text, attributes: ['style'] %>
+      </pre>
       </div>
     </div>
 
     <div id="sup-text">
       <div class="the-content">
+      <pre style ="white-space: pre-wrap; word-break: keep-all;">
         <%= sanitize @legislation.submission_text.secondary_text, attributes: ['style'] %>
+      </pre>
       </div>
     </div>
   </div>

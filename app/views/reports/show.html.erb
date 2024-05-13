@@ -9,7 +9,9 @@
 <div id="details" class="right-column">
   <% if @report.group.is_floor? %>
     <div>
+    <pre style ="white-space: pre-wrap; word-break: keep-all;">
       <%= sanitize @report.reported_text.primary_text, attributes: ['style'] %>  
+    </pre>
     </div>
   <% else %>
     <div id='tab-container' class="tab-container">
@@ -20,13 +22,17 @@
 
       <div id='legislative'> 
         <div class='the-content'>
+        <pre style ="white-space: pre-wrap; word-break: keep-all;">
           <%= sanitize @report.reported_text.primary_text, attributes: ['style'] %>
+        </pre>
         </div>
       </div>
 
       <div id='summary'>
         <div class='the-content'>
+        <pre style ="white-space: pre-wrap; word-break: keep-all;">
           <%= sanitize @report.reported_text.secondary_text, attributes: ['style'] %>
+        </pre>
         </div>
       </div>
     </div>

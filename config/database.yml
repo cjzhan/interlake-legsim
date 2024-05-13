@@ -7,20 +7,20 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  username: root
-  password:
+  username: tester
+  password: Impervious7!
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 50000
 
 development:
   <<: *default
-  username: root
+  username: tester
   database: legsim
-  password:
+  password: Impervious7!
   #socket: /tmp/mysql.sock
   # adapter: mysql2
   # database: legsim
-  # useranme: foo
+  # username: foo
   # password:
 
 # Warning: The database defined as "test" will be erased and

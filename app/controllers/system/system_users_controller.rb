@@ -16,10 +16,10 @@ class System::SystemUsersController < SystemController
     @system_user = SystemUser.new( system_user_params )
 
     if @system_user.save
-      display_message("A new System User has been create and an activation email sent to the specified email address.")
+      display_message("A new System User has been created and an activation email sent to the specified email address.")
       redirect_to :action => 'index'
     else
-      display_message("We couldn't set up that account, sorry.  Please try again, or contact an admininistrator.",:error)
+      display_message("We couldn't set up that account, sorry.  Please try again, or contact an administrator.",:error)
       render :action => 'new'
     end
   end

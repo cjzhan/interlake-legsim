@@ -93,12 +93,12 @@ class UsersController < ApplicationController
     else
       if @authorization_code
         if @agreement
-          display_message("We couldn't set up that account, sorry.  Please try again, or contact an admininistrator.",:error)
+          display_message("We couldn't set up that account, sorry.  Please try again, or contact an administrator.",:error)
         else
           display_message("You must agree to the LegSim User Agreement before we can create your account.",:error)
         end
       else
-        display_message("The provided authorization code is not valid. Please check the code provided by your insructor and try again.",:error)
+        display_message("The provided authorization code is not valid. Please check the code provided by your instructor and try again.",:error)
       end
       render :action => 'new', :layout => 'public'
     end
@@ -122,7 +122,7 @@ class UsersController < ApplicationController
     case
     when (!activation_code.blank?) && user && !user.active?
       user.activate!
-      display_message("Signup complete! Please Select Your Session and sign in to continue.")
+      display_message("Signup complete! Please select your session and sign in to continue.")
       redirect_to '/login'
     when activation_code.blank?
       display_message("The activation code was missing.  Please follow the URL from your email.",:error)

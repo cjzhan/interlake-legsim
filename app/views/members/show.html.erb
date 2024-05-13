@@ -33,7 +33,9 @@
       <div class='right-column'>
         <div class='the-content'>
           <h2 style='font-size: 22px'>Personal Statement</h2>
+          <pre style ="white-space: pre-wrap; word-break: keep-all;">
           <%= sanitize( @member.member_profile.personal_statement, attributes: ['style'] ) if @member.member_profile %><br/>
+          </pre>
 
           <table cellspacing="0">
             <tr>
@@ -59,7 +61,9 @@
           <% else %>
             <b>Constituency</b>&nbsp;&nbsp;&nbsp;
             <h2 style='font-size: 22px'><%= @member.member_profile.constituency.name %></h2><br /><br />
+            <pre style ="white-space: pre-wrap; word-break: keep-all;">
             <%= sanitize @member.member_profile.constituency_description, attributes: ['style'] %>
+            </pre>
           <% end %>
         </div>
       </div>

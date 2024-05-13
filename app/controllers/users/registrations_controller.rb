@@ -49,7 +49,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       if @authorization_code
         if @agreement
-          display_message("We couldn't set up that account, sorry.  Please try again, or contact an admininistrator.",:error)
+          display_message("We couldn't set up that account, sorry.  Please try again, or contact an administrator.",:error)
         else
           display_message("You must agree to the LegSim User Agreement before we can create your account.",:error)
         end
